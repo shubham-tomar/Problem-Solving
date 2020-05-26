@@ -1,0 +1,27 @@
+
+def result(num):
+    r = num - 2
+    i = 2
+    while i<=r:
+        if(isPrime(num-i)):
+            print(i," + ",num-i," = ",num)
+        i = nextPrime(i)
+        r = num - i
+        
+def nextPrime(n):
+    n+=1
+    while(isPrime(n) == False):
+        n+=1
+    return n
+
+def isPrime(number):
+    if number % 2:
+        for num in range(3, int(math.sqrt(number)) + 1):
+            if number % num == 0:
+               return False
+        return True
+    else:
+        return False
+
+result(34)
+        
