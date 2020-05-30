@@ -1,0 +1,11 @@
+def firstNotRepeatingCharacter(s):
+    result = ""
+    for character in s:
+        if s.count(character) == 1:
+            result = character
+            break
+        else:
+            s = s.replace(character, '')
+            result = "_"
+    return result
+
