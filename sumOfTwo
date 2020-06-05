@@ -1,0 +1,15 @@
+def sumOfTwo(a,b,target):
+    s = set()
+    for i in a:
+        s.add(target-i)
+
+    for i in b:
+        if i in s:
+            return True
+
+    return False
+
+a = [0,0,-5,56]
+b = [-10,40,-3,-1]
+target = -8
+print(sumOfTwo(a,b,target))
