@@ -1,0 +1,16 @@
+##Longest Substring Without Repeating Characters leetcode problem
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+        start = 0
+        seen = {}
+        mx = 0
+        for i,c in enumerate(s):
+            if c in seen and seen[c]>=start:
+                start = seen[c] + 1
+                seen[c] = i
+            else:
+                seen[c] = i
+                mx = max( mx , i - start + 1)
+        return mx
